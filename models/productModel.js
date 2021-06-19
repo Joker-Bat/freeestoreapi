@@ -82,6 +82,11 @@ productSchema.pre('save', function (next) {
   next();
 });
 
+productSchema.pre(/^find/, function (next) {
+  this.select('-_id');
+  next();
+});
+
 const Product = mongoose.model('Product', productSchema);
 
 module.exports = Product;
