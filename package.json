@@ -1,0 +1,18 @@
+{
+  "name": "freeestoreapi",
+  "version": "1.0.0",
+  "description": "A free e-com store API for small projects",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "freestoreapi",
+    "e-com-api"
+  ],
+  "author": "Shanmugam M",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
