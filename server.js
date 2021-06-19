@@ -1,1 +1,1 @@
-console.log("Successfully started!");
+console.log('Successfully started!');

@@ -13,6 +13,18 @@
   "author": "Shanmugam M",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
