@@ -24,7 +24,10 @@ const productSchema = new mongoose.Schema({
     trim: true,
     required: [true, 'Product must have a name.'],
   },
-  slug: String,
+  slug: {
+    type: String,
+    select: false,
+  },
   price: {
     type: Number,
     required: [true, 'Product must have a price.'],

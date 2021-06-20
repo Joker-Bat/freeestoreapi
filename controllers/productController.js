@@ -4,6 +4,7 @@ const catchAsync = require('../utils/catchAsync');
 const APIFeatures = require('../utils/apiFeatures');
 const AppError = require('../utils/appError');
 
+// Helper
 function ifObjectIsEmpty(object) {
   var isEmpty = true;
   if (JSON.stringify(object) == JSON.stringify({})) {
@@ -15,6 +16,10 @@ function ifObjectIsEmpty(object) {
   }
   return isEmpty;
 }
+
+/*
+  Get All products
+*/
 
 exports.getAllProducts = catchAsync(async (req, res, next) => {
   const products = new APIFeatures(Product.find(), req.query)
@@ -45,6 +50,30 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
     results: result.length,
     data: {
       products: result,
+    },
+  });
+});
+
+/*
+  Get product by Name
+*/
+
+exports.getProductBySlug = catchAsync(async (req, res, next) => {
+  const { slug } = req.params;
+
+  const product = new APIFeatures(
+    Product.find({ slug }),
+    req.query
+  ).limitFields();
+
+  const result = await product.model;
+  if (result.length === 0)
+    return next(new AppError('Please provide a valid product name', 400));
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      product: result,
     },
   });
 });

@@ -35,7 +35,7 @@ class APIFeatures {
   limitFields() {
     if (this.queryString.fields) {
       const limitedFields = this.queryString.fields.split(',').join(' ');
-      this.model = this.model.select(limitedFields);
+      this.model = this.model.select(limitedFields + ' -__v');
     } else {
       this.model = this.model.select('-__v');
     }
