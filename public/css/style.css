@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #333;
+  --secondary: #eee;
+}
+
+[data-theme='dark'] {
+  --primary: #eee;
+  --secondary: #000;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--secondary);
+  color: var(--primary);
+  transition: 0.5s ease;
+}
