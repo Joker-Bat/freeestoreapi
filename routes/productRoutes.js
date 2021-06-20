@@ -7,9 +7,11 @@ const productController = require('../controllers/productController.js');
 const router = express.Router();
 
 // Destructure
-const { getAllProducts, getProductBySlug } = productController;
+const { getAllProducts, getProductBySlug, getRandomProduct } =
+  productController;
 
 router.route('/').get(getAllProducts);
+router.route('/random').get(getRandomProduct);
 router.route('/:slug').get(getProductBySlug);
 
 module.exports = router;

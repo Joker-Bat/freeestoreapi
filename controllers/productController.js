@@ -77,3 +77,35 @@ exports.getProductBySlug = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+/*
+  Get random products
+*/
+
+exports.getRandomProduct = catchAsync(async (req, res, next) => {
+  const product = await Product.countDocuments();
+  var random = Math.floor(Math.random() * product) + 1;
+
+  const result = new APIFeatures(
+    Product.find({ ref: random }),
+    req.query
+  ).limitFields();
+
+  const doc = await result.model;
+
+  // check if first item got any item in there
+  if (ifObjectIsEmpty(doc[0]))
+    return next(
+      new AppError(
+        'Please provide a valid query parameters check documentation!',
+        400
+      )
+    );
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      product: doc,
+    },
+  });
+});
