@@ -129,3 +129,16 @@ exports.searchProducts = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+/*
+  fake post
+*/
+
+exports.fakePost = catchAsync(async (req, res, next) => {
+  const products = await Product.find();
+
+  res.status(200).json({
+    stauts: 'success',
+    message: 'Successfully posted',
+  });
+});

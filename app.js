@@ -9,6 +9,7 @@ const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const productRoutes = require('./routes/productRoutes');
 const viewRoutes = require('./routes/viewRoutes');
+const productController = require('./controllers/productController');
 
 // Code
 const app = express();
@@ -29,6 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', viewRoutes);
 // Product routes
 app.use('/api/v1/products', productRoutes);
+// Fake post request
+app.post('/api/v1/fakepost', productController.fakePost);
 
 // For undefined routes
 app.all('*', (req, res, next) => {
