@@ -13,6 +13,8 @@ const productController = require('./controllers/productController');
 
 // Code
 const app = express();
+// for Heroku
+app.enable('trust proxy');
 
 // CORS
 app.use(cors());
