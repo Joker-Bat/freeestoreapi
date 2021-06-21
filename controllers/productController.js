@@ -109,3 +109,23 @@ exports.getRandomProduct = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+/*
+  Search Products
+*/
+
+exports.searchProducts = catchAsync(async (req, res, next) => {
+  const askedProduct = req.params.subString;
+
+  const products = await Product.find({
+    name: { $regex: askedProduct, $options: 'i' },
+  });
+
+  res.status(200).json({
+    status: 'success',
+    result: products.length,
+    data: {
+      products,
+    },
+  });
+});
