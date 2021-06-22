@@ -1,7 +1,7 @@
 dev-data/
 dev-data/*
 
-config.env
+/config.env
 
 node_modules/
 node_modules/*

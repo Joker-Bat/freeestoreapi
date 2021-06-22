@@ -23,20 +23,6 @@ mongoose
   .then(() => console.log('Connected To DB Successfully! 👲'))
   .catch((err) => console.log('Error in DB Connection 🎗️', err));
 
-// mongoose
-//   .connect(DB, {
-//     useNewUrlParser: true,
-//     useCreateIndex: true,
-//     useFindAndModify: false,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => console.log('DB Connection Successful'));
-
-// // Watch for Errors in connection after initial establish
-// mongoose.connection.on('error', (err) => {
-//   console.log('Error in DB Connection 🚨', err);
-// });
-
 // Run server
 const port = process.env.PORT || 8000;
 const server = app.listen(port, () => {
