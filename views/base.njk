@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{title}}</title>
+    <link rel="shortcut icon" href="/images/docs/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css"/>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar__logo">
+        <a href="/">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fab"
+            data-icon="think-peaks"
+            class="svg-inline--fa fa-think-peaks fa-w-18"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 576 512"
+          >
+            <path
+              fill="currentColor"
+              d="M465.4 409.4l87.1-150.2-32-.3-55.1 95L259.2 0 23 407.4l32 .3L259.2 55.6zm-355.3-44.1h32.1l117.4-202.5L463 511.9l32.5.1-235.8-404.6z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+      <div class="navbar__links" id="navbarLinks">
+        <div class="navbar__link">
+          <a href="https://github.com/Joker-Bat/freeestoreapi" target="_blank"
+            >Github</a
+          >
+        </div>
+        <div class="navbar__link">
+          <a href="/docs">Docs</a>
+        </div>
+        <div class="toggler">
+          <label for="toggle" class="label">
+            <input type="checkbox" class="toggleInput" id="toggle"/>
+            <div class="toggle-btn"></div>
+          </label>
+        </div>
+      </div>
+      <div class="navbar__toggler" id="navbarToggler">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>

@@ -4,10 +4,11 @@ const express = require('express');
 const viewController = require('../controllers/viewController');
 
 // Destructure
-const { homePage } = viewController;
+const { homePage, docsPage } = viewController;
 
 const router = express.Router();
 
 router.get('/', homePage);
+router.get('/docs', docsPage);
 
 module.exports = router;
