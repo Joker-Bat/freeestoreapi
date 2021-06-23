@@ -29,13 +29,13 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
     ?.limitResults();
 
   // Check if valid promise is got
-  // if (!products)
-  //   return next(
-  //     new AppError(
-  //       'Please provide a valid query parameters check documentation!',
-  //       400
-  //     )
-  //   );
+  if (!products)
+    return next(
+      new AppError(
+        'Please provide a valid query parameters check documentation!',
+        400
+      )
+    );
 
   const result = await products.model;
   // check if first item got any item in there
