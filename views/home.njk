@@ -1,5 +1,20 @@
 {% extends 'base.njk' %}
 
 {% block content %}
-  <h1>This is Home page</h1>
+  <main class="homepage">
+    <div class="homepage__details">
+      <h1>Free <span class="highlight">E-Store Api</span></h1>
+      <p>
+        <span class="highlight">Practice your frontend skills</span> without
+          spending too much time in collecting data for your project.
+        </p>
+      <div class="homepage__buttons">
+        <a href="/docs" class="btn btn--fill">Docs</a>
+        <a href="https://github.com/Joker-Bat/freeestoreapi" target="_blank" class="btn btn--outline">Github</a>
+      </div>
+    </div>
+    <div class="homepage__illustration">
+      <img src="/images/docs/frontend.svg" alt="illustration"/>
+    </div>
+  </main>
 {% endblock %}

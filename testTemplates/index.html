@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
   <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{{title}}</title>
-    <link rel="shortcut icon" href="/images/docs/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/fonts.css"/>
-    <link rel="stylesheet" href="/css/style.css"/>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/ico" />
+    <link rel="stylesheet" href="./fonts.css" type="text/css" />
+    <link rel="stylesheet" href="./style.css" type="text/css" />
   </head>
   <body>
     <nav class="navbar">
@@ -37,11 +37,11 @@
           >
         </div>
         <div class="navbar__link">
-          <a href="/docs">Docs</a>
+          <a href="/docs" target="_blank">Docs</a>
         </div>
         <div class="toggler">
           <label for="toggle" class="label">
-            <input type="checkbox" class="toggleInput" id="toggle"/>
+            <input type="checkbox" class="toggleInput" id="toggle" />
             <div class="toggle-btn"></div>
           </label>
         </div>
@@ -53,16 +53,31 @@
       </div>
     </nav>
 
-    {% block content %}{% endblock %}
+    <main class="homepage">
+      <div class="homepage__details">
+        <h1>Free <span class="highlight">E-Store Api</span></h1>
+        <p>
+          <span class="highlight">Practice your frontend skills</span> without
+          spending too much time in collecting data for your project.
+        </p>
+        <div class="homepage__buttons">
+          <a href="./docs.html" class="btn btn--fill">Docs</a>
+          <a href="#" class="btn btn--outline">Github</a>
+        </div>
+      </div>
+      <div class="homepage__illustration">
+        <img src="./images/frontend.svg" alt="illustration" />
+      </div>
+    </main>
 
     <footer class="footer">
       <span>Crafted with</span>
       <span class="footer__icon">
-        <img src="/images/docs/heart.svg" alt=""/>
+        <img src="./images/heart.svg" alt="" />
       </span>
       <span>By SilverDev</span>
     </footer>
 
-    <script src="/js/index.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>

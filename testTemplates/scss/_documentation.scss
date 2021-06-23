@@ -1,0 +1,225 @@
+.documentation {
+  width: 100%;
+  font-size: 2rem;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  margin-bottom: 4rem;
+
+  @include respond(tab-port) {
+    grid-template-columns: 160px 1fr;
+  }
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 5rem 2rem;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 1px 0 3px var(--main);
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--main);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--black);
+      border-radius: 20px;
+      border: 2px solid var(--main);
+    }
+    @include respond(phone) {
+      display: none;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 4rem;
+
+      h1 {
+        font-family: "Big Shoulders Stencil Display";
+        font-weight: 700;
+        letter-spacing: 2px;
+        word-spacing: 3px;
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    .section__links {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        font-size: 1.8rem;
+        text-decoration: none;
+        color: var(--secondary);
+
+        &.active {
+          color: var(--main);
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+
+  .documentation__details {
+    box-shadow: 1px 0 3px var(--main);
+    padding: 4rem;
+
+    .section {
+      width: 100%;
+      margin-bottom: 5rem;
+      position: relative;
+      overflow: hidden;
+
+      h2 {
+        margin: 2rem 0;
+      }
+
+      &__title {
+        font-size: 3rem;
+        font-weight: 400;
+        margin-bottom: 2rem;
+      }
+
+      p {
+        color: var(--text);
+        width: 60%;
+        letter-spacing: 1px;
+        font-size: 1.8rem;
+        line-height: 150%;
+
+        @include respond(tab-port) {
+          width: 100%;
+        }
+      }
+
+      .code {
+        width: 80%;
+        position: relative;
+        display: flex;
+        margin-bottom: 2rem;
+        @include respond(tab-port) {
+          width: 100%;
+        }
+        pre {
+          width: 100%;
+          display: grid;
+          place-items: center;
+
+          code {
+            color: var(--white);
+            border-radius: 5px;
+            padding: 5rem;
+            background-color: #555;
+            word-wrap: nowrap;
+            width: 100%;
+            overflow-x: auto;
+
+            &::-webkit-scrollbar {
+              width: 10px;
+              height: 10px;
+            }
+
+            &::-webkit-scrollbar-track {
+              background: var(--main);
+              border-radius: 5px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+              background-color: var(--black);
+              border-radius: 20px;
+              border: 2px solid var(--main);
+            }
+
+            @include respond(tab-port) {
+              padding: 4rem;
+            }
+          }
+        }
+
+        .copy-icon {
+          width: 3rem;
+          height: 3rem;
+          position: absolute;
+          top: 0;
+          right: 0;
+          background-color: #fff;
+          cursor: pointer;
+          border-radius: 0 5px 0 5px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            padding: 0.5rem;
+          }
+        }
+      }
+
+      details {
+        summary {
+          cursor: pointer;
+        }
+        p {
+          width: 80%;
+          padding: 1rem 3rem;
+          transition: all 0.2s;
+        }
+      }
+
+      .option {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        p {
+          width: auto;
+        }
+
+        p:first-child {
+          margin-right: 2rem;
+        }
+
+        .key {
+          width: auto;
+          font-size: 2rem;
+          text-transform: capitalize;
+        }
+
+        .value {
+          font-weight: 500;
+
+          tr td {
+            padding: 1rem;
+          }
+
+          tr td:first-child {
+            color: var(--main);
+          }
+        }
+      }
+    }
+  }
+}

@@ -13,7 +13,7 @@
   --black: #000;
 }
 
-[data-theme='dark'] {
+[data-theme=dark] {
   --primary: #333;
   --secondary: #e6e6e6;
   --text: #dbdbdb;
@@ -22,7 +22,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
-  font-family: 'Oxygen', sans-serif;
+  font-family: "Oxygen", sans-serif;
 }
 @media screen and (max-width: 56.25em) {
   html {
@@ -197,7 +197,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .toggle-btn::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -244,7 +244,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .homepage__details h1 {
-  font-family: 'Big Shoulders Stencil Display';
+  font-family: "Big Shoulders Stencil Display";
   font-weight: 500;
   letter-spacing: 4px;
   word-spacing: 5px;
@@ -294,7 +294,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .homepage__buttons .btn::before {
-  content: '';
+  content: "";
   width: 100%;
   height: 0;
   position: absolute;
@@ -407,7 +407,7 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 4rem;
 }
 .documentation .sidebar .brand h1 {
-  font-family: 'Big Shoulders Stencil Display';
+  font-family: "Big Shoulders Stencil Display";
   font-weight: 700;
   letter-spacing: 2px;
   word-spacing: 3px;
@@ -489,30 +489,15 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   overflow-x: auto;
 }
-.documentation
-  .documentation__details
-  .section
-  .code
-  pre
-  code::-webkit-scrollbar {
+.documentation .documentation__details .section .code pre code::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
-.documentation
-  .documentation__details
-  .section
-  .code
-  pre
-  code::-webkit-scrollbar-track {
+.documentation .documentation__details .section .code pre code::-webkit-scrollbar-track {
   background: var(--main);
   border-radius: 5px;
 }
-.documentation
-  .documentation__details
-  .section
-  .code
-  pre
-  code::-webkit-scrollbar-thumb {
+.documentation .documentation__details .section .code pre code::-webkit-scrollbar-thumb {
   background-color: var(--black);
   border-radius: 20px;
   border: 2px solid var(--main);
@@ -568,12 +553,8 @@ body::-webkit-scrollbar-thumb {
 .documentation .documentation__details .section .option .value tr td {
   padding: 1rem;
 }
-.documentation
-  .documentation__details
-  .section
-  .option
-  .value
-  tr
-  td:first-child {
+.documentation .documentation__details .section .option .value tr td:first-child {
   color: var(--main);
 }
+
+/*# sourceMappingURL=style.css.map */

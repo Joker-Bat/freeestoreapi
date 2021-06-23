@@ -1,0 +1,122 @@
+/* Navbar styles */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 6rem;
+  position: relative;
+  z-index: 100;
+
+  @include respond(phone) {
+    padding: 3rem 4rem;
+  }
+}
+
+.navbar .navbar__logo {
+  width: 5rem;
+  height: 5rem;
+}
+
+.navbar .navbar__logo a {
+  text-decoration: none;
+  color: var(--main);
+}
+
+.navbar .navbar__links {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+
+  @include respond(phone) {
+    background-color: var(--white);
+    border: 1px solid red;
+    width: 70%;
+    height: 60%;
+    position: fixed;
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    justify-content: center;
+    flex-direction: column;
+    transition: transform 0.5s ease-out;
+    z-index: 10;
+
+    &.show {
+      transform: translate(-50%, 45%);
+    }
+  }
+}
+
+.navbar .navbar__links div:not(:last-child) {
+  margin-right: 3rem;
+
+  @include respond(phone) {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+}
+
+.navbar .navbar__links a {
+  text-decoration: none;
+  color: var(--main);
+  padding-bottom: 1rem;
+  transition: all 0.1s;
+
+  &:is(:hover, :active) {
+    border-bottom: 2px solid var(--main);
+  }
+}
+
+.navbar .navbar__links .toggler {
+  margin-left: 1rem;
+}
+
+.navbar__toggler {
+  position: relative;
+  color: var(--secondary);
+  cursor: pointer;
+  width: 4.4rem;
+  height: 3rem;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+
+  &.show span:nth-child(2) {
+    transform-origin: center;
+    transform: translateX(-120%);
+  }
+
+  &.show span:nth-child(1) {
+    transform-origin: center;
+    transition-delay: 0.3s;
+    transform: translateY(250%) rotate(45deg);
+  }
+
+  &.show span:nth-child(3) {
+    transform-origin: center;
+    transition-delay: 0.4s;
+    transform: translateY(-230%) rotate(-45deg);
+  }
+
+  & span {
+    display: block;
+    width: 80%;
+    height: 0.5rem;
+    border-radius: 2rem;
+    transition: transform 0.2s ease, background-color 0.1s ease-out;
+
+    background-color: var(--secondary);
+  }
+
+  &.show span {
+    background-color: var(--secondary);
+  }
+
+  @include respond(phone) {
+    display: flex;
+  }
+}

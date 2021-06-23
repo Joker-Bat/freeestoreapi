@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main: #fd6969;
+  --primary: #e4e4e4;
+  --secondary: #000;
+  --white: #fff;
+  --text: #333;
+  --black: #000;
+}
+
+[data-theme="dark"] {
+  --primary: #333;
+  --secondary: #e6e6e6;
+  --text: #dbdbdb;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%; //1rem = 10px
+  font-family: "Oxygen", sans-serif;
+
+  @include respond(tab-port) {
+    font-size: 56.25%; //1rem = 9px
+  }
+
+  @include respond(phone) {
+    font-size: 50%; //1rem = 8px
+  }
+}
+
+body {
+  background-color: var(--primary);
+  color: var(--secondary);
+  transition: background-color 0.2s ease;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--main);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--black);
+    border-radius: 20px;
+    border: 2px solid var(--main);
+  }
+}
+
+.highlight {
+  color: var(--main);
+}

@@ -1,0 +1,149 @@
+.homepage {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1000px;
+  margin: auto;
+  min-height: 75vh;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+
+  @include respond(phone) {
+    justify-items: center;
+    grid-template-columns: 1fr;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+
+    @include respond(phone) {
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-family: "Big Shoulders Stencil Display";
+      font-weight: 500;
+      letter-spacing: 4px;
+      word-spacing: 5px;
+      font-size: 5rem;
+      margin-bottom: 1rem;
+
+      @include respond(tab-port) {
+        font-size: 3.5rem;
+        word-spacing: 2px;
+        letter-spacing: 2px;
+      }
+
+      @include respond(phone) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    p {
+      color: var(--text);
+      font-weight: 400;
+      font-size: 2rem;
+      width: 70%;
+      margin-bottom: 3rem;
+
+      @include respond(tab-port) {
+        width: 80%;
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+
+    .btn {
+      position: relative;
+      text-decoration: none;
+      font-size: 2.5rem;
+      color: var(--secondary);
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      overflow: hidden;
+
+      @include respond(tab-port) {
+        font-size: 2rem;
+      }
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 0;
+        position: absolute;
+        left: 0;
+        transition: 0.8s;
+        z-index: -1;
+      }
+
+      &--fill {
+        border: 1px solid var(--main);
+        transition: filter 0.2s;
+
+        &::before {
+          top: 0;
+          border-radius: 0 0 50% 50%;
+        }
+
+        &:hover::before {
+          height: 180%;
+          background-color: var(--main);
+        }
+      }
+
+      &--outline {
+        background-color: transparent;
+        transition: background-color 0.2s;
+
+        &::before {
+          bottom: 0;
+          border-radius: 50% 50% 0 0;
+        }
+
+        &:hover::before {
+          height: 180%;
+          background-color: var(--main);
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  &__illustration {
+    width: 450px;
+    height: 450px;
+
+    @include respond(tab-port) {
+      width: 350px;
+      height: 350px;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 2rem;
+  font-size: 2rem;
+
+  & span:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}

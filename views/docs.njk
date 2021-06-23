@@ -1,5 +1,407 @@
 {% extends 'base.njk' %}
 
 {% block content %}
-  <h1>This is doc page</h1>
+  <main class="documentation">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>Free <span class="highlight">E-Store Api</span></h1>
+        <p>Documentation</p>
+      </div>
+
+      <div class="section__links" id="sectionLinks">
+        <a href="#whyThisApi">Why this API?</a>
+        <a href="#howToUse">How to use this?</a>
+        <a href="#forImages">Important for images!</a>
+        <a href="#allProducts">Get all products</a>
+        <a href="#filterProductsByPrice">Filter products by price</a>
+        <a href="#sortProductsByPrice">Sort products by price</a>
+        <a href="#limitProductFields">Limit product fields</a>
+        <a href="#limitProductsCount">Limit products count</a>
+        <a href="#getByName">Get product by name</a>
+        <a href="#getByCategory">Get product by category</a>
+        <a href="#randomProduct">Get a random product</a>
+        <a href="#searchProduct">Search Product</a>
+        <a href="#combineParams">Combine Parameters</a>
+        <a href="#fakePost">Fake post</a>
+      </div>
+    </aside>
+    <article class="documentation__details">
+      <!-- Why this API -->
+      <section class="section" id="whyThisApi">
+        <h1 class="section__title highlight">Why this API?</h1>
+        <p>
+            When i learned some basics in frontend, then i decided to make a
+            project. So i searched on internet like all.<br/>
+          <span class="highlight"
+              >Top projects to practice frontend skills, and get hired?</span
+            >
+            most of the results suggest to make a E-Commerce website. The hard
+            thing about it, when you decided to build a basic E-Commerce website
+            is to collect all the data and images. so i decided to share this
+            simple data to practice your skills without spending much time on
+            collecting data.
+          </p>
+      </section>
+
+      <!-- How to use? -->
+      <section class="section" id="howToUse">
+        <h1 class="section__title highlight">How to use this?</h1>
+        <p>
+            Here all links are only works for
+            <span class="highlight">GET</span> request, simply make a GET
+            request to the link, you will get response in
+            <span class="highlight">JSON</span> format. (If anything doesn't
+            goes wrong)
+          </p>
+      </section>
+
+      <!-- Important for images -->
+      <section class="section" id="forImages">
+        <h1 class="section__title highlight">Important for images!</h1>
+        <p>
+            In the response JSON your get <span>array of images in String format.</span> When put it in the &lt;img /&gt; tag's src attribute you need to prefix the string with <span class="highlight">/images/products/{your-string-here}</span>
+        </p><br>
+        <p>
+          <span class="highlight">(ex:)</span> if you get image as <span class="highlight">test.webp</span> then you need to use this image like below.</p>
+        <br>
+
+        <p>
+          <span class="highlight">https://freeestoreapi.herokuapp.com/<br/>images/products/test.webp</span></p>
+
+        <h2>
+          <span class="highlight">Tip!!!</span></h2>
+        <p>Set <span class="highlight">https://freeestoreapi.herokuapp.com</span> as base URL using <br>
+          <span class="highlight"> &lt;base href="https://freeestoreapi.herokuapp.com" /&gt;</span> in the <span>head of your HTML</span> and use only <span class="highlight">/images/products/test.webp</span> for image src attribute.</p>
+      </section>
+
+      <!-- Get All Products -->
+      <section class="section" id="allProducts">
+        <h1 class="section__title highlight">Get all products</h1>
+        <div class="code">
+          <pre><code>https://<span class="highlight">freeestoreapi.herokuapp.com/api/v1/products</span></code>
+          </pre>
+          <span class="copy-icon"
+              ><img src="/images/docs/copy.svg" alt=""
+/></span>
+        </div>
+        <details>
+          <summary>More info</summary>
+          <div class="option">
+            <p class="key">method:</p>
+            <p class="value">
+              <span class="highlight">GET</span></p>
+          </div>
+          <div class="option">
+            <p class="key">action:</p>
+            <p class="value">
+              <span class="highlight">Return all products</span>
+            </p>
+          </div>
+        </details>
+      </section>
+      <!-- Filter Products -->
+      <section class="section" id="filterProductsByPrice">
+        <h1 class="section__title highlight">Filter products by price</h1>
+        <div class="code">
+          <pre><code>https://<span class="highlight">freeestoreapi.herokuapp.com/api/v1/products</span>?price[gt]=10000</code>
+          </pre>
+          <span class="copy-icon"
+              ><img src="/images/docs/copy.svg" alt=""
+/></span>
+        </div>
+        <details>
+          <summary>More info</summary>
+          <p>
+              The above query gives all products which has price
+              <span class="highlight">greate than</span> RS. 10000.
+            </p>
+          <div class="option">
+            <p class="key">method:</p>
+            <p class="value">
+              <span class="highlight">GET</span></p>
+          </div>
+          <div class="option">
+            <p class="key">Other options:</p>
+            <table border class="value">
+              <tr>
+                <td>gt</td>
+                <td>Greater then</td>
+              </tr>
+              <tr>
+                <td>gte</td>
+                <td>Greater then or equal</td>
+              </tr>
+              <tr>
+                <td>lt</td>
+                <td>Less then</td>
+              </tr>
+              <tr>
+                <td>lte</td>
+                <td>Less then or equal</td>
+              </tr>
+            </table>
+          </div>
+        </details>
+      </section>
+
+      <!-- Sort products by price -->
+      <section class="section" id="sortProductsByPrice">
+        <h1 class="section__title highlight">Sort products by price</h1>
+        <div class="code">
+          <pre><code>https://<span class="highlight">freeestoreapi.herokuapp.com/api/v1/products</span>?sort=des</code>
+          </pre>
+          <span class="copy-icon"
+              ><img src="/images/docs/copy.svg" alt=""
+/></span>
+        </div>
+        <details>
+          <summary>More info</summary>
+          <p>
+              The above query gives all products ordered by price in descending
+              order.<span class="highlight">(default is ascending)</span>
+          </p>
+          <div class="option">
+            <p class="key">method:</p>
+            <p class="value">
+              <span class="highlight">GET</span></p>
+          </div>
+          <div class="option">
+            <p class="key">Other options:</p>
+            <table border class="value">
+              <tr>
+                <td>asc (default)</td>
+                <td>Ascending</td>
+              </tr>
+              <tr>
+                <td>des</td>
+                <td>Descending</td>
+              </tr>
+            </table>
+          </div>
+        </details>
+      </section>
+      <!-- Limit fields of products -->
+      <section class="section" id="limitProductFields">
+        <h1 class="section__title highlight">Limit product fields</h1>
+        <div class="code">
+          <pre><code>https://<span class="highlight">freeestoreapi.herokuapp.com/api/v1/products</span>?fields=name,price</code>
+          </pre>
+          <span class="copy-icon"
+              ><img src="/images/docs/copy.svg" alt=""
+/></span>
+        </div>
+        <details>
+          <summary>More info</summary>
+          <p>
+              The above query gives all products with its
+              <span class="highlight">name and price only</span>.
+            </p>
+          <div class="option">
+            <p class="key">method:</p>
+            <p class="value">
+              <span class="highlight">GET</span></p>
+          </div>
+          <p>
+            <span class="highlight">Note!!!</span><br/>
+              Fields value with negative symbol return all fields without
+              specified in query.
+              <span class="highlight"><br/>(ex: ?fields=-ratings)</span><br/>
+              This query will return all fields except
+              <span class="highlight">ratings</span> field.
+            </p>
+        </details>
+      </section>
+
+      <!-- Limit products count -->
+      <section class="section" id="limitProductsCount">
+        <h1 class="section__title highlight">Limit products count</h1>
+        <div class="code">
+          <pre><code>https://<span class="highlight">freeestoreapi.herokuapp.com/api/v1/products</span>?limit=8</code>
+          </pre>
+          <span class="copy-icon"
+              ><img src="/images/docs/copy.svg" alt=""
+/></span>
+        </div>
+        <details>
+          <summary>More info</summary>
+          <p>The above query gives total of <span>8 products</span>.</p>
+          <div class="option">
+            <p class="key">method:</p>
+            <p class="value">
+              <span class="highlight">GET</span></p>
+          </div>
+          <p>
+            <span class="highlight">Note!!!</span><br/>
+              In database it has only
+              <span class="highlight">20 products</span> in 4 categorys. Make
+              sure to request products below 20.
+            </p>
+        </details>
+      </section>
+
+      <!-- Get Product by name -->
+      <section class="section" id="getByName">
+        <h1 class="section__title highlight">Get product by name</h1>
+        <div class="code">
+          <pre><code>https://<span class="highlight">freeestoreapi.herokuapp.com/api/v1/products</span>/hp-15s</code>
+          </pre>
+          <span class="copy-icon"
+              ><img src="/images/docs/copy.svg" alt=""
+/></span>
+        </div>
+        <details>
+          <summary>More info</summary>
+          <p>
+              The above query gives product with the <span class="highlight"></span>field
+              slug with value hp-15s</span>.
+            </p>
+        <div class="option">
+          <p class="key">method:</p>
+          <p class="value">
+            <span class="highlight">GET</span></p>
+        </div>
+        <p>
+          <span class="highlight">Note!!!</span><br/>
+              In each product it has field named
+              <span class="highlight"
+                >slug which is based on that products name and its unique.</span
+              >
+              so you can get product by it slug name.
+            </p>
+      </details>
+    </section>
+
+    <!-- Get Products by category -->
+    <section class="section" id="getByCategory">
+      <h1 class="section__title highlight">Get product by category</h1>
+      <div class="code">
+        <pre><code>https://<span class="highlight">freeestoreapi.herokuapp.com/api/v1/products</span>?type=mobile</code>
+          </pre>
+        <span class="copy-icon"
+              ><img src="/images/docs/copy.svg" alt=""
+/></span>
+      </div>
+      <details>
+        <summary>More info</summary>
+        <p>
+              The above query gives all products which has <span class="highlight"> type field value as mobile</span>.
+            </p>
+        <div class="option">
+          <p class="key">method:</p>
+          <p class="value">
+            <span class="highlight">GET</span></p>
+        </div>
+        <div class="option">
+          <p class="key">Other options:</p>
+          <table border class="value">
+            <tr>
+              <td>mobile (default)</td>
+            </tr>
+            <tr>
+              <td>laptop</td>
+            </tr>
+            <tr>
+              <td>headphone</td>
+            </tr>
+            <tr>
+              <td>camera</td>
+            </tr>
+          </table>
+        </div>
+      </details>
+    </section>
+
+    <!-- Get Random product -->
+    <section class="section" id="randomProduct">
+      <h1 class="section__title highlight">Get a random product</h1>
+      <div class="code">
+        <pre><code>https://<span class="highlight">freeestoreapi.herokuapp.com/api/v1/products</span>/random</code>
+          </pre>
+        <span class="copy-icon"
+              ><img src="/images/docs/copy.svg" alt=""
+/></span>
+      </div>
+      <details>
+        <summary>More info</summary>
+        <p>
+              The above query gives a <span class="highlight">random product</span> among 20 products.
+            </p>
+        <div class="option">
+          <p class="key">method:</p>
+          <p class="value">
+            <span class="highlight">GET</span></p>
+        </div>
+      </details>
+    </section>
+
+    <!-- Search Product -->
+    <section class="section" id="searchProduct">
+      <h1 class="section__title highlight">Search product</h1>
+      <div class="code">
+        <pre><code>https://<span class="highlight">freeestoreapi.herokuapp.com/api/v1/products</span>/search/mi</code>
+          </pre>
+        <span class="copy-icon"
+              ><img src="/images/docs/copy.svg" alt=""
+/></span>
+      </div>
+      <details>
+        <summary>More info</summary>
+        <p>
+              The above query gives all products which <span class="highlight">name includes a value 'mi' init</span>.
+            </p>
+        <div class="option">
+          <p class="key">method:</p>
+          <p class="value">
+            <span class="highlight">GET</span></p>
+        </div>
+      </details>
+    </section>
+
+    <!-- Combine parameters -->
+    <section class="section" id="combineParams">
+      <h1 class="section__title highlight">Combine Parameters</h1>
+      <div class="code">
+        <pre><code>https://<span class="highlight">freeestoreapi.herokuapp.com/api/v1/products</span>?price[gt]=50000&sort=des&fields=name,price</code>
+        </pre>
+        <span class="copy-icon"
+              ><img src="/images/docs/copy.svg" alt=""/></span>
+      </div>
+      <details>
+        <summary>More info</summary>
+        <p>
+              The above query gives all products have <span class="highlight">price greater then Rs.50000</span> and sort products by <span class="highlight">price in descending order</span> and gives <span class="highlight">only name and price fields</span> of all products.
+            </p>
+        <div class="option">
+          <p class="key">method:</p>
+          <p class="value">
+            <span class="highlight">GET</span></p>
+        </div>
+      </details>
+    </section>
+
+    <!-- Fakt Post -->
+    <section class="section" id="fakePost">
+      <h1 class="section__title highlight">Fake post</h1>
+      <div class="code">
+        <pre><code>https://<span class="highlight">freeestoreapi.herokuapp.com/api/v1/fakepost</span></code>
+            </pre>
+        <span class="copy-icon"
+              ><img src="/images/docs/copy.svg" alt=""
+/></span>
+      </div>
+      <details>
+        <summary>More info</summary>
+        <p>
+              The above query gives you a dummy success message which <span class="highlight">doesn't do anything.</span> Use it if you want to send a fake post request for placeholder.
+            </p>
+        <div class="option">
+          <p class="key">method:</p>
+          <p class="value">
+            <span class="highlight">POST</span></p>
+        </div>
+      </details>
+    </section>
+
+  </article>
+</main>
 {% endblock %}
