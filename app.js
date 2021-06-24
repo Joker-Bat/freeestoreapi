@@ -4,6 +4,7 @@ const path = require('path');
 const express = require('express');
 const nunjucks = require('nunjucks');
 const cors = require('cors');
+const compression = require('compression');
 // Our modules
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -28,6 +29,9 @@ nunjucks.configure('views', {
 app.set('view engine', 'njk');
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Compress res data
+app.use(compression());
 
 app.use('/', viewRoutes);
 // Product routes
