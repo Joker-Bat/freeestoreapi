@@ -6,7 +6,7 @@
   margin-bottom: 4rem;
 
   @include respond(tab-port) {
-    grid-template-columns: 160px 1fr;
+    grid-template-columns: 200px 1fr;
   }
 
   @include respond(phone) {
@@ -47,7 +47,7 @@
       margin-bottom: 4rem;
 
       h1 {
-        font-family: "Big Shoulders Stencil Display";
+        font-family: 'Big Shoulders Stencil Display';
         font-weight: 700;
         letter-spacing: 2px;
         word-spacing: 3px;
@@ -67,6 +67,10 @@
         font-size: 1.8rem;
         text-decoration: none;
         color: var(--secondary);
+
+        @include respond(tab-port) {
+          font-size: 1.5rem;
+        }
 
         &.active {
           color: var(--main);

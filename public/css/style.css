@@ -366,7 +366,7 @@ body::-webkit-scrollbar-thumb {
 }
 @media screen and (max-width: 56.25em) {
   .documentation {
-    grid-template-columns: 160px 1fr;
+    grid-template-columns: 200px 1fr;
   }
 }
 @media screen and (max-width: 37.5em) {
@@ -424,6 +424,11 @@ body::-webkit-scrollbar-thumb {
   font-size: 1.8rem;
   text-decoration: none;
   color: var(--secondary);
+}
+@media screen and (max-width: 56.25em) {
+  .documentation .sidebar .section__links a {
+    font-size: 1.5rem;
+  }
 }
 .documentation .sidebar .section__links a.active {
   color: var(--main);
