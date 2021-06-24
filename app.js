@@ -52,7 +52,8 @@ app.post('/api/v1/fakepost', productController.fakePost);
 
 // For undefined routes
 app.all('*', (req, res, next) => {
-  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+  res.status(404).render('404');
+  // next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
 
 // Globale Error handler

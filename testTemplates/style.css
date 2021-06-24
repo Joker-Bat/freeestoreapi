@@ -562,4 +562,39 @@ body::-webkit-scrollbar-thumb {
   color: var(--main);
 }
 
+.error {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.error img {
+  display: block;
+  width: 70%;
+  max-width: 800px;
+  height: 70%;
+  margin-bottom: 5rem;
+}
+@media screen and (max-width: 37.5em) {
+  .error img {
+    width: 90%;
+    height: auto;
+  }
+}
+.error .home--btn {
+  text-decoration: none;
+  font-size: 2rem;
+  text-transform: uppercase;
+  background-color: var(--main);
+  padding: 1rem 2rem;
+  color: var(--white);
+  border-radius: 5px;
+  transition: transform 0.2s ease;
+}
+.error .home--btn:is(:hover, :active) {
+  transform: translateY(-2px);
+}
+
 /*# sourceMappingURL=style.css.map */
