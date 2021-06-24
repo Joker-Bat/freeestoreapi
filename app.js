@@ -5,6 +5,7 @@ const express = require('express');
 const nunjucks = require('nunjucks');
 const cors = require('cors');
 const compression = require('compression');
+const rateLimit = require('express-rate-limit');
 // Our modules
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -29,6 +30,16 @@ nunjucks.configure('views', {
 app.set('view engine', 'njk');
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Limit raquest from Same IP
+const limiter = rateLimit({
+  max: 150,
+  windowMs: 60 * 60 * 1000,
+  message: 'Too many request from this IP, try again in an hour!',
+});
+
+//Use limiter only for api related requests
+app.use('/api', limiter);
 
 // Compress res data
 app.use(compression());
