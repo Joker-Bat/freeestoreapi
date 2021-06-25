@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Limit raquest from Same IP
 const limiter = rateLimit({
-  max: 150,
+  max: 1000,
   windowMs: 60 * 60 * 1000,
   message: 'Too many request from this IP, try again in an hour!',
 });
