@@ -1,6 +1,6 @@
 # Free E-Store API
 
-[Free E-Store API](https://freeestoreapi.herokuapp.com/) is a free and open source API where you can get list of products data in JSON format to practice your front end skills when you decided to build a E-Commerce project.
+[Free E-Store API](https://free-e-store-api.onrender.com/) is a free and open source API where you can get list of products data in JSON format to practice your front end skills when you decided to build a E-Commerce project.
 
 ## Why?
 
@@ -15,7 +15,7 @@ Here all routes are GET request only, so simple make a GET request to the route 
 ## Get all products
 
 ```
-https://freeestoreapi.herokuapp.com/api/v1/products
+https://free-e-store-api.onrender.com/api/v1/products
 ```
 
 The above request will give you all requests with all fields.
@@ -28,18 +28,18 @@ In the response you'll get array of images as string, when using it in a src att
 
 ```html
 <img
-  src="https://freeestoreapi.herokuapp.com/images/products/test.webp"
+  src="https://free-e-store-api.onrender.com/images/products/test.webp"
   alt="test"
 />
 ```
 
 ## Tip !!!
 
-Set a base url in head of the HTML as `<base href="https://freeestoreapi.herokuapp.com" />` and use only `/images/products/test.webp` in src attribute of img tag.
+Set a base url in head of the HTML as `<base href="https://free-e-store-api.onrender.com" />` and use only `/images/products/test.webp` in src attribute of img tag.
 
 ## For More
 
-For more details about available routes and its response please check it out in the official documentation [Free E-Store API](https://freeestoreapi.herokuapp.com/docs)
+For more details about available routes and its response please check it out in the official documentation [Free E-Store API](https://free-e-store-api.onrender.com/docs)
 
 ## Want to contribute
 
