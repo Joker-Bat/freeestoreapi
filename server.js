@@ -14,12 +14,7 @@ const DB = process.env.DATABASE.replace(
 
 // DB Connection
 mongoose
-  .connect(DB, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-  })
+  .connect(DB)
   .then(() => console.log('Connected To DB Successfully! 👲'))
   .catch((err) => console.log('Error in DB Connection 🎗️', err));
 
@@ -28,4 +23,3 @@ const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}...`);
 });
-
